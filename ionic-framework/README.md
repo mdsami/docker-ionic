@@ -54,7 +54,8 @@ ionic run android
 
 ## Coming next
 Support for android emulation with X11 forwarding
-
+run on android
 ```bash
+
 ionic platform emulate android
 ```

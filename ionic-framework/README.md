@@ -3,19 +3,19 @@
 ## Usage
 
 ```
-docker run -ti --rm -p 8100:8100 -p 35729:35729 agileek/ionic-framework
+docker run -ti --rm -p 8100:8100 -p 35729:35729 mdsami/ionic-framework
 ```
 If you have your own ionic sources, you can launch it with:
 
 ```
-docker run -ti --rm -p 8100:8100 -p 35729:35729 -v /path/to/your/ionic-project/:/myApp:rw agileek/ionic-framework:1.4.5
+docker run -ti --rm -p 8100:8100 -p 35729:35729 -v /path/to/your/ionic-project/:/myApp:rw mdsami/ionic-framework:1.4.5
 ```
 
 ### Automation
 With this alias:
 
 ```
-alias ionic="docker run -ti --rm -p 8100:8100 -p 35729:35729 --privileged -v /dev/bus/usb:/dev/bus/usb -v ~/.gradle:/root/.gradle -v \$PWD:/myApp:rw agileek/ionic-framework:1.4.5 ionic"
+alias ionic="docker run -ti --rm -p 8100:8100 -p 35729:35729 --privileged -v /dev/bus/usb:/dev/bus/usb -v ~/.gradle:/root/.gradle -v \$PWD:/myApp:rw mdsami/ionic-framework:1.4.5 ionic"
 ```
 
 > Due to a bug in ionic, if you want to use ionic serve, you have to use --net host option :
@@ -48,7 +48,7 @@ ionic run android
 
 ## FAQ
 * The application is not installed on my android device
-  * Try `docker run -ti --rm -p 8100:8100 -p 35729:35729 --privileged -v /dev/bus/usb:/dev/bus/usb -v \$PWD:/myApp:rw agileek/ionic-framework adb devices` your device should appear
+  * Try `docker run -ti --rm -p 8100:8100 -p 35729:35729 --privileged -v /dev/bus/usb:/dev/bus/usb -v \$PWD:/myApp:rw mdsami/ionic-framework adb devices` your device should appear
 * The adb devices show nothing whereas I can see it when I do `adb devices` on my computer
   * You can't have adb inside and outside docker at the same time, be sure to `adb kill-server` on your computer before using this image
 
